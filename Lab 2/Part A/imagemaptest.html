@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Image Test Map</title>
+      </head>
+
+      <body>
+      <!--Heading-->
+      <h1>Image Map Test</h1>
+      <hr>
+
+      <!--Image File-->
+      <img src="../areas1.png" alt="Image Map" usemap="#shapes" width="389" height="259"/>
+
+      <!--Creating our map-->
+      <map name="shapes" id="shapes">
+          <!--x,y,rad-->
+          <area shape="circle" coords="75,105,50" href="circle.html" alt="Circle">
+          <!--x1,y1,x2,y2-->
+          <area shape="rect" coords="175,45,345,95" href="rectangle.html" alt="Rectangle">
+          <!--x1,y1,x2,y2,x3,y3-->
+          <area shape="poly" coords="220,115,160,220,275,220" href="triangle.html" alt="Triangle">
+          <!--0,0,x,y-->
+          <area shape="rect" coords="0,0,389,259" href="default.html" alt="Default"/>
+      </map>
+      </body>
+</html>
