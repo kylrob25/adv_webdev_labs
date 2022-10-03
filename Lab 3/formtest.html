@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <title>Form Test</title>
+
+    <style>
+        td {
+            padding-right: 25px;
+        }
+    </style>
+</head>
+
+<body>
+<h1>My Form Page</h1>
+
+<form action="http://tv-pi.duckdns.org/cgi-bin/feedback_3_2.py" id="testform" method="get">
+    <fieldset>
+        <legend>Your Details</legend>
+        <input name="My_Form_Page" type="hidden" value="This is a Completed Form">
+
+        <table>
+            <tr>
+                <td>
+                    <label for="title">Title:</label>
+                </td>
+                <td>
+                    <select id="title" name="personal_title" size="1">
+                        <option value="">None Selected</option>
+                        <option value="Mr">Mr.</option>
+                        <option value="Mrs">Mrs.</option>
+                        <option value="Ms">Ms.</option>
+                        <option value="Miss">Miss.</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="firstname">Forename:</label>
+                </td>
+
+                <td>
+                    <input id="firstname" name="Firstname" type="text">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="surname">Surname:</label>
+                </td>
+
+                <td>
+                    <input id="surname" name="Surname" type="text">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>What type of response would you prefer?</label>
+                </td>
+
+                <td>
+                    <input id="mail" name="response" type="radio" value="mail">
+                    <label for="mail">Mail</label>
+
+                    <input id="telephone" name="response" type="radio" value="phone">
+                    <label for="telephone">Telephone</label>
+
+                    <input id="fax" name="response" type="radio" value="fax">
+                    <label for="fax">Fax</label>
+
+                    <input id="email" name="response" type="radio" value="email">
+                    <label for="email">Email</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>I am interested in the following areas:</label>
+                </td>
+
+                <td>
+                    <input id="xhtml" name="xhtml" type="checkbox" value="1">
+                    <label for="xhtml">XHTML</label>
+
+                    <input id="css" name="css" type="checkbox" value="1">
+                    <label for="css">CSS</label>
+
+                    <input id="js" name="js" type="checkbox" value="1">
+                    <label for="js">JavaScript</label>
+
+                    <input id="flash" name="flash" type="checkbox" value="1">
+                    <label for="flash">Flash</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="comments">Comments</label>
+                </td>
+
+                <td>
+                    <textarea form="testform" id="comments" name="customer_feedback"></textarea>
+                </td>
+            </tr>
+        </table>
+
+        <input name="Submit_Button" type="submit" value="Submit Details">
+    </fieldset>
+</form>
+</body>
+</html>
