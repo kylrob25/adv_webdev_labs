@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <title>Basic HTML5 Document Structure</title>
+
+    <style>
+        table {
+            border: outset;
+        }
+
+        td,th {
+            border: inset 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="table">
+    </div>
+
+    <script>
+        const tableDiv = document.getElementById('table')
+        const table = document.createElement('table')
+
+        function createHeadings() {
+            const headings = [
+                "Term (Months)", "Monthly Payment"
+            ]
+
+            const tr = document.createElement('tr')
+
+            headings.forEach(heading => {
+                const th = document.createElement('th')
+                th.appendChild(document.createTextNode(heading))
+                tr.appendChild(th)
+            })
+
+            table.appendChild(tr)
+        }
+
+        function createCaption() {
+            const caption = document.createElement('caption')
+            caption.setAttribute('id', 'caption-above')
+
+            caption.appendChild(document.createTextNode('Monthly cost per £1000 borrowed at 10% per annum interest'))
+
+            table.appendChild(caption)
+        }
+
+        function createRows() {
+            for(let x = 12; x<=48; x += 4) {
+                const tr = document.createElement('tr')
+
+                const td = document.createElement('td')
+                td.appendChild(document.createTextNode(x))
+                tr.appendChild(td)
+
+                const td1 = document.createElement('td')
+                td1.appendChild(document.createTextNode("£" + payment(1000, 10, x)))
+                tr.appendChild(td1)
+
+                table.appendChild(tr)
+            }
+        }
+
+        function payment(capital, interest, term) {
+            term=term/12.0; // this line makes the function work in months  
+            monthly_interest=interest/1200.0;
+            monthly=capital*monthly_interest;
+            monthly=monthly/(1.0-1.0/Math.pow(1.0+monthly_interest,term*12.0));
+            monthly=monthly.toFixed(2); // rounds to nearest hundredth of a currency unit
+            return monthly;
+        }
+
+        createHeadings()
+        createCaption()
+        createRows()
+
+        tableDiv.appendChild(table)
+    </script>
+</body>
+</html>
